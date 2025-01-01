@@ -1,0 +1,21 @@
+# exe/csv_tsv_xlsx_handler
+require 'csv_tsv_xlsx_handler'
+
+file_path = ARGV[0]  # Get file path from command-line argument
+file_type = ARGV[1]  # Get file type (csv, tsv, xlsx) from command-line argument
+
+if file_type == "csv"
+  data = CsvTsvXlsxHandler.read_csv(file_path)
+  puts "CSV Data: #{data}"
+
+elsif file_type == "tsv"
+  data = CsvTsvXlsxHandler.read_tsv(file_path)
+  puts "TSV Data: #{data}"
+
+elsif file_type == "xlsx"
+  data = CsvTsvXlsxHandler.read_xlsx(file_path)
+  puts "XLSX Data: #{data}"
+
+else
+  puts "Unsupported file type!"
+end
